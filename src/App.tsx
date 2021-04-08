@@ -1,35 +1,28 @@
-import React, { useEffect, useState } from 'react'
-import zipmex from './zipmex.svg'
-import './App.css'
-import OrderForm, { TOrderForm } from './OrderForm'
-import OrderBook from './OrderBook'
-import orderBookStream, { TOrderBookStream } from './order-book-stream'
+import "./App.css";
+import { Layout } from "layouts";
+import loadable from "@loadable/component";
+import { LoadingContent } from "components";
+
+const Home = loadable(() => import("./pages/Home"), {
+  fallback: <LoadingContent />,
+});
+
 
 function App() {
-  const [orderBook, setOrderBook] = useState<TOrderBookStream>({
-    buy: [],
-    sell: [],
-  })
-
-  useEffect(() => {
-    orderBookStream.subscribe((data) => {
-      setOrderBook(data)
-    })
-  }, [])
-
-  const handleSubmitOrder: TOrderForm['submitOrder'] = (side, { price, amount }) => {
-    orderBookStream.addOrder(side, { price, amount })
-  }
+  // const handleSubmitOrder: TOrderForm["submitOrder"] = (
+  //   side,
+  //   { price, amount }
+  // ) => {
+  //   orderBookStream.addOrder(side, { price, amount });
+  // };
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={zipmex} className="App-logo" alt="logo" />
-      </header>
-      <OrderForm submitOrder={handleSubmitOrder} />
-      <OrderBook buy={orderBook.buy} sell={orderBook.sell} />
+      <Layout>
+        <Home />
+      </Layout>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

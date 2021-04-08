@@ -3,18 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@coingecko/cryptoformat": "^0.4.2",
+    "@loadable/component": "^5.14.1",
+    "@material-ui/core": "^4.11.3",
+    "@reduxjs/toolkit": "^1.5.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
+    "@testing-library/react-hooks": "^5.1.1",
     "@testing-library/user-event": "^12.1.10",
     "@types/faker": "^5.1.7",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "clsx": "^1.1.1",
     "faker": "^5.4.0",
+    "lodash": "^4.17.21",
+    "numeral": "^2.0.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-redux": "^7.2.3",
     "react-scripts": "4.0.3",
+    "react-spinners": "^0.10.6",
+    "redux-devtools-extension": "^2.13.9",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
@@ -41,5 +52,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/loadable__component": "^5.13.3",
+    "@types/lodash": "^4.14.168",
+    "@types/numeral": "^2.0.1",
+    "@types/react-redux": "^7.1.16",
+    "@types/redux-logger": "^3.0.8"
   }
 }
